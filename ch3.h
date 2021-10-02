@@ -44,3 +44,48 @@ void exe_5()
         str2 += str1;
     cout << str2 << endl;
 }
+
+void exe_6()
+{
+    string str;
+    cin >> str;
+    for(auto &c : str)
+        c = 'X';
+    cout << str << endl;
+}
+
+void exe_7()
+{
+    string str;
+    cin >> str;
+    for(char &c : str)
+        c = 'X';
+    cout << str << endl;
+}
+
+void exe_8()
+{
+    string str;
+    cin >> str;
+
+    decltype(str.size()) index = 0;
+    while(index < str.size())
+        str[index++] = 'X';
+
+    cout << "while:" << str << endl;
+
+    for (; index < str.size(); ++index)
+        str[index] = 'X';
+    cout << "for:" << str << endl;
+}
+
+void exe_10()
+{
+    string str;
+    cin >> str;
+
+    for (auto iter = str.cbegin(); iter != str.cend(); iter++)
+        if(ispunct(*iter))
+            str.erase(iter);
+    cout << str << endl;
+}
